@@ -46,7 +46,7 @@ bot.on("message", function (message) {
             message.channel.sendMessage("pong")
             break;
         case "uptime":
-            message.channel.sendMessage("Uptime: " + upTime())
+            message.channel.sendMessage("Uptime: " + upTime(hours))
             break;
 
     }
