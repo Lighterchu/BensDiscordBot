@@ -2,17 +2,27 @@ const Discord = require("discord.js");
 
 const Token = "NDAwNTk1NjYyMjMzOTI3Njgw.DTd7Uw.1xgMN6dGzCMCjExyT2Fo5u7dxBo"
 const prefix = "."
-var uptime = 0
 
 var bot = new Discord.Client();
 
-now = new Date();
-countTo = new Date(countTo);
-difference = (now-countTo);
+
+function upTime(countTo) {
+  now = new Date();
+  countTo = new Date(countTo);
+  difference = (now-countTo);
+  hours=Math.floor((difference%(60*60*1000*24))/(60*60*1000)*1);
+
+  clearTimeout(upTime.to);
+  upTime.to=setTimeout(function(){ upTime(countTo); },1000);
+}
+
+
 
 bot.on("ready", function() {
     console.log("ready");
-    uptime = Math.floor((difference%(60*60*1000*24))/(60*60*1000)*1);
+    
+
+
 });
 
 
@@ -36,7 +46,7 @@ bot.on("message", function (message) {
             message.channel.sendMessage("pong")
             break;
         case "uptime":
-            message.channel.sendMessage("Uptime: " + uptime)
+            message.channel.sendMessage("Uptime: " + upTime())
             break;
 
     }
