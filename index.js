@@ -30,7 +30,7 @@ bot.on("message", function (message) {
         case "ping":
             message.channel.sendMessage("pong")
             break;
-        case "bitch":
+        case "about":
             message.channel.send({embed: {
     color: 3447003,
     author: {
