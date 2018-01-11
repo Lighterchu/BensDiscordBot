@@ -6,23 +6,8 @@ const prefix = "."
 var bot = new Discord.Client();
 
 
-function upTime(countTo) {
-  now = new Date();
-  countTo = new Date(countTo);
-  difference = (now-countTo);
-  hours=Math.floor((difference%(60*60*1000*24))/(60*60*1000)*1);
-
-  clearTimeout(upTime.to);
-  upTime.to=setTimeout(function(){ upTime(countTo); },1000);
-}
-
-
-
 bot.on("ready", function() {
     console.log("ready");
-    
-
-
 });
 
 
@@ -45,8 +30,35 @@ bot.on("message", function (message) {
         case "ping":
             message.channel.sendMessage("pong")
             break;
-        case "uptime":
-            message.channel.sendMessage("Uptime: " + upTime(1))
+        case "bitch":
+            message.channel.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "About the bot.",
+    description: "This bot was made for the server, AllRoundGamers.",
+    fields: [{
+        name: "Who developed it.",
+        value: "Ben/LighterChu - Flyken."
+      },
+      {
+        name: "Why though?",
+        value: "Because we can and you need to stfu."
+      },
+      {
+        name: "Need help?",
+        value: "If you need any help, or would like to report a problem, please message: **__@LighterChu__**."
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© MasterBot - AllRoundGamers - Niverean."
+    }
+  }
+});
             break;
 
     }
