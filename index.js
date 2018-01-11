@@ -13,7 +13,7 @@ bot.on("ready", function() {
 
 
 bot.on("guildMemberAdd", function(member) {
-    member.guild.channels.find("name", "general").sendMessage(member.toString() + "welcome to the server!");
+    member.guild.channels.find("name", "general").sendMessage(member.toString() + ", welcome to the server!");
 
     member.addRole(member.guild.roles.find("name","test"));
 });
