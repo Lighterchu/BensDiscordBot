@@ -12,15 +12,6 @@ bot.on("ready", function() {
    
 });
 
-
-bot.on("guildMemberAdd", function(member) {
-    let role = message.guild.roles.find("name", "test");
-    member.guild.channels.find("name", "general").sendMessage(member.toString() + ", welcome to the server!");
-
-    //member.addRole(member.guild.roles.find("name","test"));
-    member.addRole(role).catch(console.error);
-});
-
 // event when client writes a message
 bot.on("message", function (message) {
     if (message.author.equals(bot.user)) return;
@@ -38,6 +29,14 @@ bot.on("message", function (message) {
             break;
 
     }
+});
+
+bot.on("guildMemberAdd", function(member) {
+    let role = message.guild.roles.find("name", "test");
+    member.guild.channels.find("name", "general").sendMessage(member.toString() + ", welcome to the server!");
+
+    //member.addRole(member.guild.roles.find("name","test"));
+    member.addRole(role).catch(console.error);
 });
 
 bot.login(Token);
