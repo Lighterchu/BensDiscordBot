@@ -54,7 +54,7 @@ bot.on("message", function (message) {
             ],
             timestamp: new Date(),
             footer: {
-            icon_url: client.user.avatarURL,
+            icon_url: message.author.avatarURL,
             text: "© MasterBot - AllRoundGamers - Niverean."
             }
         }
