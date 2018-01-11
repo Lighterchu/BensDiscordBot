@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 const Token = "NDAwNTk1NjYyMjMzOTI3Njgw.DTd7Uw.1xgMN6dGzCMCjExyT2Fo5u7dxBo"
 const prefix = "."
+const uptime = 0
 
 var bot = new Discord.Client();
 
@@ -9,6 +10,7 @@ var bot = new Discord.Client();
 
 bot.on("ready", function() {
     console.log("ready");
+    uptime = Math.floor((0 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 });
 
 
@@ -31,8 +33,8 @@ bot.on("message", function (message) {
         case "ping":
             message.channel.sendMessage("pong")
             break;
-        case "are you alive":
-            message.channel.sendMessage("Yes i am Alive")
+        case "uptime":
+            message.channel.sendMessage("Uptime: " + uptime)
             break;
 
     }
