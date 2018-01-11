@@ -34,8 +34,8 @@ bot.on("message", function (message) {
             message.channel.send({embed: {
                 color: 3447003,
                 author: {
-                    name: message.author,
-                    icon_url: message.author.avatarURL
+                    name: bot.user.username,
+                    icon_url: bot.user.avatarURL
                 },
             title: "About the bot.",
             description: "This bot was made for the server, AllRoundGamers.",
@@ -54,7 +54,7 @@ bot.on("message", function (message) {
             ],
             timestamp: new Date(),
             footer: {
-            icon_url: message.author.avatarURL,
+            icon_url: bot.user.avatarURL,
             text: "© MasterBot - AllRoundGamers - Niverean."
             }
         }
