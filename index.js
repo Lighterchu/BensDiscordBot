@@ -16,7 +16,7 @@ bot.on("guildMemberAdd", function(member) {
     member.guild.channels.find("name", "general").sendMessage(member.toString() + ", welcome to the server!");
 
     //member.addRole(member.guild.roles.find("name","test"));
-    member.addRole("test");
+    member.addRole(member.guild.roles("test"));
 });
 
 // event when client writes a message
