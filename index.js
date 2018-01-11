@@ -32,33 +32,33 @@ bot.on("message", function (message) {
             break;
         case "about":
             message.channel.send({embed: {
-    color: 3447003,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "About the bot.",
-    description: "This bot was made for the server, AllRoundGamers.",
-    fields: [{
-        name: "Who developed it.",
-        value: "Ben/LighterChu - Flyken."
-      },
-      {
-        name: "Why though?",
-        value: "Because we can and you need to stfu."
-      },
-      {
-        name: "Need help?",
-        value: "If you need any help, or would like to report a problem, please message: **__@LighterChu__**."
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "© MasterBot - AllRoundGamers - Niverean."
-    }
-  }
-});
+                color: 3447003,
+                author: {
+                    name: message.author,
+                    icon_url: message.author.avatarURL
+                },
+            title: "About the bot.",
+            description: "This bot was made for the server, AllRoundGamers.",
+            fields: [{
+                name: "Who developed it.",
+                value: "Ben/LighterChu - Flyken."
+            },
+            {
+                name: "Why though?",
+                value: "Because we can and you need to stfu."
+            },
+            {
+                name: "Need help?",
+                value: "If you need any help, or would like to report a problem, please message: **__@LighterChu__**."
+            }
+            ],
+            timestamp: new Date(),
+            footer: {
+            icon_url: client.user.avatarURL,
+            text: "© MasterBot - AllRoundGamers - Niverean."
+            }
+        }
+        });
             break;
 
     }
