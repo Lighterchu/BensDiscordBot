@@ -2,15 +2,17 @@ const Discord = require("discord.js");
 
 const Token = "NDAwNTk1NjYyMjMzOTI3Njgw.DTd7Uw.1xgMN6dGzCMCjExyT2Fo5u7dxBo"
 const prefix = "."
-const uptime = 0
+var uptime = 0
 
 var bot = new Discord.Client();
 
-
+now = new Date();
+countTo = new Date(countTo);
+difference = (now-countTo);
 
 bot.on("ready", function() {
     console.log("ready");
-    uptime = Math.floor((0 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    uptime = Math.floor((difference%(60*60*1000*24))/(60*60*1000)*1);
 });
 
 
