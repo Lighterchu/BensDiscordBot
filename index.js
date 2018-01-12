@@ -1,8 +1,10 @@
 const Discord = require("discord.js");
 
-const Token = "NDAwNTk1NjYyMjMzOTI3Njgw.DTd7Uw.1xgMN6dGzCMCjExyT2Fo5u7dxBo"
-const prefix = "."
+const Token = "NDAwNTk1NjYyMjMzOTI3Njgw.DTd7Uw.1xgMN6dGzCMCjExyT2Fo5u7dxBo";
+const prefix = ".";
 var bot = new Discord.Client();
+
+const joinRole = "Memebers";
 
 
 bot.on("ready", function() {
@@ -41,7 +43,12 @@ bot.on("message", function (message) {
             },
             {
                 name: "Need help?",
-                value: "If you need any help, or would like to report a problem, please message: **__@LighterChu__**."
+                value: "If you need any help, or would like to report a problem, please message: **__@LighterChu__**. or @Mods"
+            },
+            {
+                name: "Want To help on the server",
+                value: "Message the @LighterChu or the Mods, explain why you will be a good mod for the server."
+
             }
             ],
             timestamp: new Date(),
@@ -59,7 +66,7 @@ bot.on("message", function (message) {
 bot.on("guildMemberAdd", function(member) {
     
     member.guild.channels.find("name", "general").sendMessage(member.toString() + ", welcome to the server!");
-     member.addRole(member.guild.roles.find("name","test"));
+     member.addRole(member.guild.roles.find("name",joinRole));
    // member.addRole(role).catch(console.error);
 });
 bot.login(Token);
