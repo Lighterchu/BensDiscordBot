@@ -5,7 +5,6 @@ const prefix = "."
 var bot = new Discord.Client();
 
 
-
 bot.on("ready", function() {
     console.log("ready");
    
@@ -23,8 +22,35 @@ bot.on("message", function (message) {
         case "ping":
             message.channel.sendMessage("pong")
             break;
-        case "are you alive":
-            message.channel.sendMessage("Yes i am Alive")
+        case "about":
+            message.channel.send({embed: {
+                color: 3447003,
+                author: {
+                    name: bot.user.username,
+                    icon_url: bot.user.avatarURL
+                },
+            title: "About the bot.",
+            description: "This bot was made for the server, AllRoundGamers.",
+            fields: [{
+                name: "Who developed it.",
+                value: "Ben/LighterChu - Flyken."
+            },
+            {
+                name: "Why though?",
+                value: "Because we can and you need to stfu."
+            },
+            {
+                name: "Need help?",
+                value: "If you need any help, or would like to report a problem, please message: **__@LighterChu__**."
+            }
+            ],
+            timestamp: new Date(),
+            footer: {
+            icon_url: bot.user.avatarURL,
+            text: "© MasterBot - AllRoundGamers - Niverean."
+            }
+        }
+        });
             break;
 
     }
