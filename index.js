@@ -37,7 +37,7 @@ bot.on("guildMemberAdd", function(member) {
     
     member.guild.channels.find("name", "general").sendMessage(member.toString() + ", welcome to the server!");
 
-    //member.addRole(member.guild.roles.find("name","test"));
-    member.addRole(role).catch(console.error);
+    member.addRole(member.guild.roles.find("name","test"));
+   // member.addRole(role).catch(console.error);
 });
 bot.login(Token);
