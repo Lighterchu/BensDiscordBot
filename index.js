@@ -9,11 +9,12 @@ var bot = new Discord.Client();
 
 bot.on("ready", function() {
     console.log("ready");
-    let role = message.guild.roles.find("name", "test");
+   
 });
 
 
 bot.on("guildMemberAdd", function(member) {
+    let role = message.guild.roles.find("name", "test");
     member.guild.channels.find("name", "general").sendMessage(member.toString() + ", welcome to the server!");
 
     //member.addRole(member.guild.roles.find("name","test"));
