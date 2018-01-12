@@ -4,11 +4,17 @@ const Token = "NDAwNTk1NjYyMjMzOTI3Njgw.DTd7Uw.1xgMN6dGzCMCjExyT2Fo5u7dxBo";
 const prefix = ".";
 var bot = new Discord.Client();
 
-const joinRole = "Members";
+const defaultRole = "Members";
+ 
+  
+
+// Sql stuff
+
 
 
 bot.on("ready", function() {
     console.log("ready");
+    
    
 });
 
@@ -63,10 +69,15 @@ bot.on("message", function (message) {
     }
 });
 
+//keeps track of users time
+
+
+
+
+// addes user to role 
 bot.on("guildMemberAdd", function(member) {
-    
     member.guild.channels.find("name", "general").sendMessage(member.toString() + ", welcome to the server!");
-     member.addRole(member.guild.roles.find("name",joinRole));
+     member.addRole(member.guild.roles.find("name",defaultRole));
    // member.addRole(role).catch(console.error);
 });
 bot.login(Token);
