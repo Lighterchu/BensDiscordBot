@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 const Token = "NDAwNTk1NjYyMjMzOTI3Njgw.DTd7Uw.1xgMN6dGzCMCjExyT2Fo5u7dxBo"
-const prefix = ".command"
+const prefix = "."
 
 var bot = new Discord.Client();
 
