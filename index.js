@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 
 const Token = "NDAwNTk1NjYyMjMzOTI3Njgw.DTd7Uw.1xgMN6dGzCMCjExyT2Fo5u7dxBo"
 const prefix = "."
-const role = null
 var bot = new Discord.Client();
 
 
