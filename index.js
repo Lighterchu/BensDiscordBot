@@ -4,7 +4,7 @@ const Token = "NDAwNTk1NjYyMjMzOTI3Njgw.DTd7Uw.1xgMN6dGzCMCjExyT2Fo5u7dxBo";
 const prefix = ".";
 var bot = new Discord.Client();
 
-const joinRole = "Memebers";
+const joinRole = "Members";
 
 
 bot.on("ready", function() {
