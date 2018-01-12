@@ -17,8 +17,6 @@ bot.on("message", function (message) {
 
     if (!message.content.startsWith(prefix)) return;
 
-    role = message.guild.roles.find("name", "test");
-
     var commands = message.content.substring(prefix.length).split(" ");
 
     switch (commands[0].toLowerCase()) {
